@@ -187,10 +187,8 @@ Elements are returned as governed by the [query algorithm outlined by the OSM v0
    to the above rules. (This does not apply recursively; meaning that elements
    referenced by a relation are not returned by virtue of being in that
    relation.)
-
-Accepted `opts` include:
-
-- `opts.observations` (boolean): whether to include `type === 'observation'` objects as well as regular OSM types.
+4. All observations within the bounding box. An observation is a Mapeo point,
+   so this may not be relevant to you if you aren't using Mapeo.
 
 ### var rs = osm.refs(id[, cb])
 

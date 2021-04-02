@@ -414,10 +414,8 @@ Osm.prototype.query = function (bbox, opts, cb) {
 
   var filter = through.obj(function (row, _, next) {
     if (!row || !row.type) return next()
-    if (!opts.observations) {
-      var type = row.type
-      if (type !== 'node' && type !== 'way' && type !== 'relation') return next()
-    }
+    const type = row.type
+    if (type !== 'node' && type !== 'way' && type !== 'relation' && type !== 'observation') return next()
     next(null, row)
   })
 
